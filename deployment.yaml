@@ -15,5 +15,17 @@ spec:
       containers:
       - name: k8s-deployment
         image: programarc/k8s:13
-        ports:
-        - containerPort: 3000
+        resources: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s-service
+spec:
+  selector:
+    app: k8s-deployment
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
