@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: k8s-deployment
-        image: programarc/k8s:23
+        image: programarc/k8s:24
         ports:
         - containerPort: 3000
         resources: {}
